@@ -127,8 +127,13 @@ public class Buttons extends ActionFragment implements Preference.OnPreferenceCh
         }
 
         // bits for hardware keys present on device
-        final int deviceKeys = getResources().getInteger(
-                com.android.internal.R.integer.config_deviceHardwareKeys);
+        int deviceKeys = context.getResources().getInteger(
+                org.lineageos.platform.internal.R.integer.config_deviceHardwareKeys);
+        // if lineage overlay is not defined, try get from android
+        if (deviceKeys == 0) {
+                deviceKeys = getResources().getInteger(
+                        com.android.internal.R.integer.config_deviceHardwareKeys);
+        }
 
         // read bits for present hardware keys
         final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
