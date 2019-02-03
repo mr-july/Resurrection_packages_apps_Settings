@@ -127,7 +127,7 @@ public class Buttons extends ActionFragment implements Preference.OnPreferenceCh
         }
 
         // bits for hardware keys present on device
-        int deviceKeys = context.getResources().getInteger(
+        int deviceKeys = getResources().getInteger(
                 org.lineageos.platform.internal.R.integer.config_deviceHardwareKeys);
         // if lineage overlay is not defined, try get from android
         if (deviceKeys == 0) {
