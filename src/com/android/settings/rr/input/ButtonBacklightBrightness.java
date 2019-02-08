@@ -98,12 +98,8 @@ public class ButtonBacklightBrightness extends CustomDgPreference<AlertDialog> i
     @Override
     protected void onPrepareDialogBuilder(AlertDialog.Builder builder, DialogInterface.OnClickListener listener) {
         super.onPrepareDialogBuilder(builder, listener);
-        builder.setNeutralButton(R.string.reset,
-                new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            }
-        });
+        builder.setPositiveButton(android.R.string.ok, null)
+                .setNeutralButton(R.string.reset, null);
     }
 
     @Override
